@@ -1,0 +1,6 @@
+[submodule "CombineAPI"]
+	path = CombineAPI
+	url = git@github.com:lucien1011/CombineAPI.git
+[submodule "CombineStatFW"]
+	path = CombineStatFW
+	url = git@github.com:lucien1011/CombineStatFW.git

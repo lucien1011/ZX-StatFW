@@ -1,0 +1,6 @@
+DataCard/
+*.pyc
+*.sw*
+AsymptoticLimits_Err.txt
+AsymptoticLimits_Out.txt
+*.root
