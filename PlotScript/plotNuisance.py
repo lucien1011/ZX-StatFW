@@ -22,7 +22,7 @@ def makePlot(postFitDict,preFitDict,histName="postFitNuisance",labelFunc=None):
         nuisValue,nuisErr = nuisTuple
         preFitValue,preFitError = preFitDict[nuisName]
         hist.SetBinContent(iNuis,(nuisValue-preFitValue)/preFitError)
-        hist.SetBinError(iNuis,nuisError/preFitError)
+        hist.SetBinError(iNuis,nuisErr/preFitError)
         hist.GetXaxis().SetBinLabel(iNuis,nuisName if not labelFunc else labelFunc(nuisName))
         iNuis += 1
     return hist

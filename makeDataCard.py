@@ -16,6 +16,7 @@ from Utils.mkdir_p import mkdir_p
 parser = argparse.ArgumentParser()
 parser.add_argument("--inputDir",action="store")
 parser.add_argument("--outputDir",action="store")
+parser.add_argument("--frPath",action="store",default="/home/lucien/AnalysisCode/Higgs/ZXEstimate/Data/FakeRate_Vukasin_190326/FR_WZremoved_17.root")
 parser.add_argument("--verbose",action="store_true")
 
 option = parser.parse_args()
@@ -26,18 +27,18 @@ inputDir        = option.inputDir
 outputDir       = option.outputDir
 TFileName       = "StatInput.root"
 dataCardName    = "FakeRateDC"
-frFilePath      = "/home/lucien/AnalysisCode/Higgs/ZXEstimate/Data/FakeRate_Vukasin_190326/FR_WZremoved_17.root"
-predCR          = "Data_Run2017_PredCR_2P2F"
+frFilePath      = option.frPath
+predCR          = "Data_PredCR_2P2F"
 
 # ____________________________________________________________________________________________________________________________________________ ||
 # mass window
 data_names = [
-        "Data_Run2017_3P1F",
+        "Data_3P1F",
         ]
 
 bkg_names = [
-        "Data_Run2017_PredCR_2P2F",
-        "WZTo3LNu",
+        "Data_PredCR_2P2F",
+        #"WZTo3LNu",
         ]
 
 # ____________________________________________________________________________________________________________________________________________ ||
@@ -48,6 +49,10 @@ frHistDict = {
         ("Mu","EE"): frFile.Get("Data_FRmu_EE"),
         ("El","EB"): frFile.Get("Data_FRel_EB"),
         ("El","EE"): frFile.Get("Data_FRel_EE"),
+        #("Mu","EB"): frFile.Get("h1D_FRmu_EB"),
+        #("Mu","EE"): frFile.Get("h1D_FRmu_EE"),
+        #("El","EB"): frFile.Get("h1D_FRel_EB"),
+        #("El","EE"): frFile.Get("h1D_FRel_EE"),
         }
 binNames = []
 for data_name in data_names:
